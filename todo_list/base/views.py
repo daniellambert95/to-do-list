@@ -33,9 +33,9 @@ class RegisterPage(FormView):
     class Meta:
             fields = ('username')
             help_texts = {
-                'username': 'Please enter an appropriate human name.',
+                'username': 'Please enter an name without any spaces e.g. Robert.',
             }
-            
+
 # this function is logging in the newly registered user if the form is valid
     def form_valid(self, form):
         user = form.save()
