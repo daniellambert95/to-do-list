@@ -32,7 +32,7 @@ class RegisterPage(FormView):
 
     class Meta:
             fields = ('username')
-            help_texts = {
+            help_text = {
                 'username': 'Please enter an name without any spaces e.g. Robert.',
             }
 
