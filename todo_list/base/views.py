@@ -30,7 +30,12 @@ class RegisterPage(FormView):
     # redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
 
-
+    class Meta:
+            fields = ('username')
+            help_texts = {
+                'username': 'Please enter an appropriate human name.',
+            }
+            
 # this function is logging in the newly registered user if the form is valid
     def form_valid(self, form):
         user = form.save()
@@ -75,6 +80,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('tasks')
+
 
     def form_valid(self, form):
         form.instance.user = self.request.user

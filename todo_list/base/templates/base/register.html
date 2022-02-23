@@ -11,6 +11,9 @@
         {% csrf_token %}
         <label for="">{{ form.username.label }}</label>
         {{ form.username }}
+        {% if username.help_text %}
+            <small style="color: grey">{{ username.help_text|safe }}</small>
+        {% endif %}
         <label for="">{{ form.password1.label }}</label>
         {{ form.password1 }}
         <label for="">{{ form.password2.label }}</label>
