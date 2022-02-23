@@ -30,11 +30,6 @@ class RegisterPage(FormView):
     # redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
 
-    class Meta:
-            fields = ('username')
-            help_text = {
-                'username': 'Please enter an name without any spaces e.g. Robert.',
-            }
 
 # this function is logging in the newly registered user if the form is valid
     def form_valid(self, form):

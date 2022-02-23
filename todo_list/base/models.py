@@ -15,3 +15,6 @@ class Task(models.Model):
 
     class Meta:
         ordering = ['complete','-created']
+        help_text = {
+                'user': 'Please enter an name without any spaces e.g. Robert.',
+            }
