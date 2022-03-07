@@ -36,8 +36,11 @@
             <div class="task-title">
                 <div class="task-complete-icon"></div>
                 <i><s><a href="{% url 'task-update' task.id %}">{{ task }}</a></s></i>
+                
             </div>
-            
+
+            <i style="margin-left: auto; margin-right: 20px;"><s><a style="text-decoration: none;" href="{% url 'task-update' task.id %}">{{ task.person }}</a></s></i>
+
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
 
 
@@ -46,6 +49,8 @@
             <div class="task-incomplete-icon"></div>
             <a href="{% url 'task-update' task.id %}">{{ task }}</a>
         </div>
+        
+        <a style="text-decoration: none; margin-left: auto; margin-right: 20px;" href="{% url 'task-update' task.id %}">{{ task.person }}</a>
 
         <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
 
